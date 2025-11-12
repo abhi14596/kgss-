@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Hope Foundation - Empowering communities through education, healthcare, and sustainable development">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;">
+    <title>Hope Foundation - Making a Difference</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8B1A1A;
+            --secondary-color: #D4AF37;
+            --accent-color: #1E5A8E;
+            --gradient-start: #8B1A1A;
+            --gradient-end: #D4AF37;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            width: 60px;
+            margin-right: 12px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 3px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(139, 26, 26, 0.9), rgba(212, 175, 55, 0.85)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238B1A1A" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .btn-custom {
+            background-color: var(--secondary-color);
+            color: #000;
+            padding: 12px 35px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-custom:hover {
+            background-color: #B8941F;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            color: #000;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+        
+        .motive-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .motive-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .motive-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-section {
+            background-color: #f8f9fa;
+        }
+        
+        .stats-box {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stats-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--gradient-start);
+        }
+        
+        .stats-label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-control:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            height: 100%;
+        }
+        
+        .contact-info-item {
+            margin-bottom: 25px;
+        }
+        
+        .contact-info-item i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--secondary-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .events-section {
+            background-color: #fff;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .event-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .event-content {
+            padding: 20px;
+        }
+
+        .event-date {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .event-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .event-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Image Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow: auto;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .close-modal:hover {
+            color: var(--secondary-color);
+        }
+
+        .form-message {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="https://i.ibb.co/G4Q34QHy/logo-keshav.png" alt="Krishna Gopal Seva Samithi Logo" id="ngoLogo" crossorigin="anonymous">
+                Krishna Gopal Seva Samithi
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#motive">Our Motive</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#events">Past Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 hero-content">
+                    <h1>Manav Mein Hi Madhav Mile</h1>
+                    <p>Serving humanity with compassion and dedication since 2016. Join us in making a meaningful difference in communities.</p>
+                    <a href="#contact" class="btn-custom">Get Involved</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motive Section -->
+    <section id="motive" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our Motive</h2>
+                <p class="lead mt-4">We are driven by a vision to create lasting positive change in society</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="motive-card">
+                        <div class="motive-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Quality Education</h4>
+                        <p>Providing access to quality education for underprivileged children and promoting literacy programs in rural communities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="motive-card">
+                        <div class="motive-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4>Healthcare Access</h4>
+                        <p>Ensuring accessible and affordable healthcare services through medical camps, awareness programs, and health initiatives.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="motive-card">
+                        <div class="motive-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Sustainable Development</h4>
+                        <p>Promoting environmental sustainability and empowering communities with skills for economic independence and growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">About Us</h2>
+                <p class="lead mt-4">Building a better tomorrow, one community at a time</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <h3>Who We Are</h3>
+                    <p>Hope Foundation is a non-profit organization dedicated to creating sustainable change in underserved communities. Established with a vision to empower individuals and transform lives, we work tirelessly to bridge the gap between aspiration and opportunity.</p>
+                    <p>Our team of passionate volunteers and professionals work across multiple sectors including education, healthcare, women empowerment, and environmental conservation. We believe that every individual deserves access to basic necessities and opportunities for growth.</p>
+                    <p>Through collaborative partnerships and community-driven initiatives, we have touched thousands of lives and continue to expand our reach to make a lasting impact.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <div class="stats-box">
+                                <div class="stats-number">10K+</div>
+                                <div class="stats-label">Lives Impacted</div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <div class="stats-box">
+                                <div class="stats-number">50+</div>
+                                <div class="stats-label">Projects Completed</div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <div class="stats-box">
+                                <div class="stats-number">15+</div>
+                                <div class="stats-label">States Covered</div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <div class="stats-box">
+                                <div class="stats-number">500+</div>
+                                <div class="stats-label">Volunteers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events Section -->
+    <section id="events" class="events-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Past Events</h2>
+                <p class="lead mt-4">Our journey of service and compassion</p>
+            </div>
+            <div class="row">
+                <!-- Event 1: Cool Water Camp 2018 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/400x250/8B1A1A/FFFFFF?text=Cool+Water+Camp+2018" alt="Cool Water Camp 2018" class="event-image" onclick="openModal(this.src)">
+                        <div class="event-content">
+                            <div class="event-date"><i class="far fa-calendar-alt"></i> March 28, 2018</div>
+                            <h5 class="event-title">Cool Water Camp Opening</h5>
+                            <p class="event-description">Successfully launched our second year of Cool Water Camp at Eswaramma Yadav Pochabina, providing free drinking water to the community.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2: Summer Session 2019 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/400x250/1E5A8E/FFFFFF?text=Lemon+Water+Distribution" alt="Lemon Water Distribution" class="event-image" onclick="openModal(this.src)">
+                        <div class="event-content">
+                            <div class="event-date"><i class="far fa-calendar-alt"></i> April 7, 2019</div>
+                            <h5 class="event-title">Cool Lemon Water Camp</h5>
+                            <p class="event-description">First day success of our summer session providing cool lemon water to travelers and workers in the hot summer season.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3: Food Distribution April 2020 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/400x250/D4AF37/000000?text=Food+Distribution+2020" alt="Food Distribution 2020" class="event-image" onclick="openModal(this.src)">
+                        <div class="event-content">
+                            <div class="event-date"><i class="far fa-calendar-alt"></i> April 13-16, 2020</div>
+                            <h5 class="event-title">Food Distribution Drive</h5>
+                            <p class="event-description">During challenging times, we distributed meals at various locations including Pallavi Garden, Chintal Kunta, and Vanastali Puram.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4: 8th Day Food Distribution -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/400x250/8B1A1A/FFFFFF?text=Continuous+Service" alt="8th Day Service" class="event-image" onclick="openModal(this.src)">
+                        <div class="event-content">
+                            <div class="event-date"><i class="far fa-calendar-alt"></i> April 14, 2020</div>
+                            <h5 class="event-title">8th Day of Continuous Service</h5>
+                            <p class="event-description">Continued food distribution with cool water near Pallavi Garden, Vanasthalipuram, serving the community with dedication.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 5: 15th Day Service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/400x250/1E5A8E/FFFFFF?text=15+Days+Milestone" alt="15th Day Service" class="event-image" onclick="openModal(this.src)">
+                        <div class="event-content">
+                            <div class="event-date"><i class="far fa-calendar-alt"></i> April 21, 2020</div>
+                            <h5 class="event-title">15 Days of Service</h5>
+                            <p class="event-description">Reached a milestone of 15 consecutive days providing meals near Pallavi Garden, Chintal Kunta, Vanastali Puram area.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 6: 24th Day Service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/400x250/D4AF37/000000?text=24+Days+Service" alt="24th Day Service" class="event-image" onclick="openModal(this.src)">
+                        <div class="event-content">
+                            <div class="event-date"><i class="far fa-calendar-alt"></i> April 30, 2020</div>
+                            <h5 class="event-title">24 Days of Dedication</h5>
+                            <p class="event-description">Completed 24 days of continuous meal distribution service near Pallavi Garden, demonstrating our commitment to the community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="lead mt-4">Get in touch with us to make a difference together</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 mb-4">
+                    <div class="contact-form">
+                        <h4 class="mb-4">Send Us a Message</h4>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" required pattern="[A-Za-z\s]{2,50}" title="Please enter a valid name (2-50 characters)">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required minlength="10" maxlength="1000"></textarea>
+                            </div>
+                            <button type="submit" class="btn-custom">Send Message</button>
+                            <div id="formMessage" class="form-message"></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 mb-4">
+                    <div class="contact-info">
+                        <h4 class="mb-4">Get In Touch</h4>
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Hope Street, Mumbai, Maharashtra 400001</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 98765 43210</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@hopefoundation.org</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="mt-4">
+                            <h5>Follow Us</h5>
+                            <div class="social-links">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Krishna Gopal Seva Samithi. All rights reserved. | Manav Mein Hi Madhav Mile - Since 2016</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Form validation and submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const formMessage = document.getElementById('formMessage');
+            
+            // Basic XSS prevention - sanitize inputs
+            const sanitize = (str) => {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            };
+            
+            // Validate inputs
+            if (!name || !email || !message) {
+                showMessage('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Phone validation (if provided)
+            if (phone && !/^[0-9]{10}$/.test(phone)) {
+                showMessage('Please enter a valid 10-digit phone number.', 'error');
+                return;
+            }
+            
+            // Simulate form submission (in production, this would send to a server)
+            showMessage('Thank you for your message! We will get back to you soon.', 'success');
+            this.reset();
+        });
+        
+        function showMessage(msg, type) {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.textContent = msg;
+            formMessage.className = 'form-message ' + type;
+            formMessage.style.display = 'block';
+            
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'linear-gradient(135deg, #6B0F0F, #B8941F)';
+            } else {
+                navbar.style.background = 'linear-gradient(135deg, var(--gradient-start), var(--gradient-end))';
+            }
+        });
+
+        // Image Modal Functions
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
