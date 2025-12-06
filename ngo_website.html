@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Krishna Gopal Seva Samithi - Empowering communities through education, healthcare, and sustainable development">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;">
-    <title>Krishna Gopal Seva Samithi - Making a Difference</title>
+    <title>Krishna Gopal Seva Samithi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
@@ -14,8 +11,6 @@
             --primary-color: #8B1A1A;
             --secondary-color: #D4AF37;
             --accent-color: #1E5A8E;
-            --gradient-start: #8B1A1A;
-            --gradient-end: #D4AF37;
         }
         
         body {
@@ -24,20 +19,17 @@
         }
         
         .navbar {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
         }
         
         .navbar-brand img {
             height: 60px;
             width: 60px;
             margin-right: 12px;
-            object-fit: contain;
             background: white;
             border-radius: 50%;
             padding: 3px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .navbar-brand {
@@ -49,7 +41,6 @@
         .nav-link {
             color: rgba(255,255,255,0.9) !important;
             margin: 0 10px;
-            transition: color 0.3s ease;
         }
         
         .nav-link:hover {
@@ -57,10 +48,7 @@
         }
         
         .hero-section {
-            background: linear-gradient(135deg, rgba(139, 26, 26, 0.9), rgba(212, 175, 55, 0.85)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238B1A1A" width="1200" height="600"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, rgba(139, 26, 26, 0.9), rgba(212, 175, 55, 0.85));
             color: white;
             padding: 120px 0;
             min-height: 100vh;
@@ -72,24 +60,11 @@
             font-size: 3.5rem;
             font-weight: bold;
             margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
         }
         
         .hero-content p {
             font-size: 1.3rem;
             margin-bottom: 30px;
-            animation: fadeInUp 1.2s ease;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         
         .btn-custom {
@@ -100,7 +75,6 @@
             border: none;
             font-size: 1.1rem;
             font-weight: 600;
-            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
         }
@@ -108,7 +82,6 @@
         .btn-custom:hover {
             background-color: #B8941F;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
             color: #000;
         }
         
@@ -132,7 +105,7 @@
             background-color: var(--secondary-color);
         }
         
-        .motive-card {
+        .service-card {
             background: white;
             border-radius: 15px;
             padding: 30px;
@@ -142,12 +115,12 @@
             height: 100%;
         }
         
-        .motive-card:hover {
+        .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
         
-        .motive-icon {
+        .service-icon {
             font-size: 3rem;
             color: var(--accent-color);
             margin-bottom: 20px;
@@ -165,7 +138,7 @@
         .stats-number {
             font-size: 3rem;
             font-weight: bold;
-            color: var(--gradient-start);
+            color: var(--primary-color);
         }
         
         .stats-label {
@@ -173,16 +146,47 @@
             color: #666;
         }
         
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .event-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .event-content {
+            padding: 20px;
+        }
+        
+        .event-date {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .event-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
         .contact-form {
             background: white;
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .form-control:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
         }
         
         .contact-info {
@@ -213,118 +217,10 @@
             color: white;
             font-size: 1.5rem;
             margin: 0 10px;
-            transition: color 0.3s ease;
         }
         
         .social-links a:hover {
             color: var(--secondary-color);
-        }
-
-        .events-section {
-            background-color: #fff;
-        }
-
-        .event-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-        }
-
-        .event-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .event-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            cursor: pointer;
-        }
-
-        .event-content {
-            padding: 20px;
-        }
-
-        .event-date {
-            color: var(--secondary-color);
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .event-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .event-description {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Image Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            overflow: auto;
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 10000;
-        }
-
-        .close-modal:hover {
-            color: var(--secondary-color);
-        }
-
-        .form-message {
-            display: none;
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .form-message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .form-message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
         }
     </style>
 </head>
@@ -333,7 +229,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <img src="https://i.ibb.co/G4Q34QHy/logo-keshav.png" alt="Krishna Gopal Seva Samithi Logo" id="ngoLogo" crossorigin="anonymous">
+                <img src="https://i.ibb.co/G4Q34QHy/logo-keshav.png" alt="Logo">
                 Krishna Gopal Seva Samithi
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -341,21 +237,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#motive">Our Motive</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#events">Past Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Our Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Past Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -367,128 +253,113 @@
             <div class="row">
                 <div class="col-lg-8 hero-content">
                     <h1>Manav Mein Hi Madhav Mile</h1>
-                    <p>Serving humanity with compassion and dedication since 2016. Join us in making a meaningful difference in communities.</p>
+                    <p>Serving humanity with compassion and dedication since 2016. Join us in making a meaningful difference.</p>
                     <a href="#contact" class="btn-custom">Get Involved</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Motive Section -->
-    <section id="motive" class="py-5">
+    <!-- Services Section -->
+    <section id="services" class="py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title">Our Motive</h2>
-                <p class="lead mt-4">We are driven by a vision to create lasting positive change in society</p>
+                <h2 class="section-title">Our Services</h2>
+                <p class="lead mt-4">Dedicated to serving humanity through compassionate programs</p>
             </div>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="motive-card">
-                        <div class="motive-icon">
-                            <i class="fas fa-graduation-cap"></i>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-utensils"></i>
                         </div>
-                        <h4>Quality Education</h4>
-                        <p>Providing access to quality education for underprivileged children and promoting literacy programs in rural communities.</p>
+                        <h4>Free Meals to the Needy People</h4>
+                        <p>Providing nutritious meals to those in need, ensuring no one goes hungry.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="motive-card">
-                        <div class="motive-icon">
-                            <i class="fas fa-heartbeat"></i>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-child"></i>
                         </div>
-                        <h4>Healthcare Access</h4>
-                        <p>Ensuring accessible and affordable healthcare services through medical camps, awareness programs, and health initiatives.</p>
+                        <h4>Orphanage Children's & Old Age Home Services</h4>
+                        <p>Supporting orphanages and old age homes with essential care and compassion.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="motive-card">
-                        <div class="motive-icon">
-                            <i class="fas fa-leaf"></i>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-stethoscope"></i>
                         </div>
-                        <h4>Sustainable Development</h4>
-                        <p>Promoting environmental sustainability and empowering communities with skills for economic independence and growth.</p>
+                        <h4>Free Medical Camp</h4>
+                        <p>Organizing health check-ups and providing free medical assistance to communities.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cow"></i>
+                        </div>
+                        <h4>Gau Shala Seva</h4>
+                        <p>Dedicated service to protect and care for cows through our Gau Shala initiatives.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4>Help People with Disabilities</h4>
+                        <p>Supporting differently-abled individuals with assistive devices and programs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h4>Other Service Programs</h4>
+                        <p>Water distribution, educational support, and emergency relief efforts.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Past Events Section -->
-    <section id="events" class="events-section py-5">
+    <section id="events" class="py-5">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title">Past Events</h2>
                 <p class="lead mt-4">Our journey of service and compassion</p>
             </div>
             <div class="row">
-                <!-- Event 1: Cool Water Camp 2018 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="event-card">
-                        <img src="https://via.placeholder.com/400x250/8B1A1A/FFFFFF?text=Cool+Water+Camp+2018" alt="Cool Water Camp 2018" class="event-image" onclick="openModal(this.src)">
+                        <img src="https://via.placeholder.com/400x250/8B1A1A/FFFFFF?text=Cool+Water+Camp" alt="Event" class="event-image">
                         <div class="event-content">
                             <div class="event-date"><i class="far fa-calendar-alt"></i> March 28, 2018</div>
                             <h5 class="event-title">Cool Water Camp Opening</h5>
-                            <p class="event-description">Successfully launched our second year of Cool Water Camp at Eswaramma Yadav Pochabina, providing free drinking water to the community.</p>
+                            <p>Successfully launched our second year of Cool Water Camp, providing free drinking water to the community.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Event 2: Summer Session 2019 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="event-card">
-                        <img src="https://via.placeholder.com/400x250/1E5A8E/FFFFFF?text=Lemon+Water+Distribution" alt="Lemon Water Distribution" class="event-image" onclick="openModal(this.src)">
+                        <img src="https://via.placeholder.com/400x250/1E5A8E/FFFFFF?text=Lemon+Water" alt="Event" class="event-image">
                         <div class="event-content">
                             <div class="event-date"><i class="far fa-calendar-alt"></i> April 7, 2019</div>
                             <h5 class="event-title">Cool Lemon Water Camp</h5>
-                            <p class="event-description">First day success of our summer session providing cool lemon water to travelers and workers in the hot summer season.</p>
+                            <p>First day success providing cool lemon water to travelers and workers during summer.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Event 3: Food Distribution April 2020 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="event-card">
-                        <img src="https://via.placeholder.com/400x250/D4AF37/000000?text=Food+Distribution+2020" alt="Food Distribution 2020" class="event-image" onclick="openModal(this.src)">
+                        <img src="https://via.placeholder.com/400x250/D4AF37/000000?text=Food+Distribution" alt="Event" class="event-image">
                         <div class="event-content">
-                            <div class="event-date"><i class="far fa-calendar-alt"></i> April 13-16, 2020</div>
+                            <div class="event-date"><i class="far fa-calendar-alt"></i> April 2020</div>
                             <h5 class="event-title">Food Distribution Drive</h5>
-                            <p class="event-description">During challenging times, we distributed meals at various locations including Pallavi Garden, Chintal Kunta, and Vanastali Puram.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event 4: 8th Day Food Distribution -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="event-card">
-                        <img src="https://via.placeholder.com/400x250/8B1A1A/FFFFFF?text=Continuous+Service" alt="8th Day Service" class="event-image" onclick="openModal(this.src)">
-                        <div class="event-content">
-                            <div class="event-date"><i class="far fa-calendar-alt"></i> April 14, 2020</div>
-                            <h5 class="event-title">8th Day of Continuous Service</h5>
-                            <p class="event-description">Continued food distribution with cool water near Pallavi Garden, Vanasthalipuram, serving the community with dedication.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event 5: 15th Day Service -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="event-card">
-                        <img src="https://via.placeholder.com/400x250/1E5A8E/FFFFFF?text=15+Days+Milestone" alt="15th Day Service" class="event-image" onclick="openModal(this.src)">
-                        <div class="event-content">
-                            <div class="event-date"><i class="far fa-calendar-alt"></i> April 21, 2020</div>
-                            <h5 class="event-title">15 Days of Service</h5>
-                            <p class="event-description">Reached a milestone of 15 consecutive days providing meals near Pallavi Garden, Chintal Kunta, Vanastali Puram area.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event 6: 24th Day Service -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="event-card">
-                        <img src="https://via.placeholder.com/400x250/D4AF37/000000?text=24+Days+Service" alt="24th Day Service" class="event-image" onclick="openModal(this.src)">
-                        <div class="event-content">
-                            <div class="event-date"><i class="far fa-calendar-alt"></i> April 30, 2020</div>
-                            <h5 class="event-title">24 Days of Dedication</h5>
-                            <p class="event-description">Completed 24 days of continuous meal distribution service near Pallavi Garden, demonstrating our commitment to the community.</p>
+                            <p>Distributed meals at various locations including Pallavi Garden and Vanastali Puram.</p>
                         </div>
                     </div>
                 </div>
@@ -504,10 +375,9 @@
                 <p class="lead mt-4">Serving humanity, one heart at a time</p>
             </div>
             
-            <!-- Founding Member Section -->
             <div class="row align-items-center mb-5">
                 <div class="col-lg-4 mb-4 text-center">
-                    <img src="https://ibb.co/pjCYrzd9" alt="Kapii Kumar Agarwal" class="img-fluid rounded-circle" style="max-width: 250px; border: 5px solid var(--secondary-color); box-shadow: 0 5px 20px rgba(0,0,0,0.2);" onerror="this.src='https://via.placeholder.com/250/8B1A1A/FFFFFF?text=Founder'">
+                    <img src="https://i.ibb.co/pjCYrzd/founder.jpg" alt="Kapil Kumar Agarwal" class="img-fluid rounded-circle" style="max-width: 250px; border: 5px solid var(--secondary-color);" onerror="this.src='https://via.placeholder.com/250/8B1A1A/FFFFFF?text=Founder'">
                     <h4 class="mt-3" style="color: var(--primary-color);">Kapil Kumar Agarwal</h4>
                     <p style="color: var(--accent-color); font-weight: 600;">Founding Member</p>
                     <p style="color: var(--secondary-color); font-weight: bold;">Son of Late Shri M.L. Agarwal</p>
@@ -515,14 +385,13 @@
                 </div>
                 <div class="col-lg-8 mb-4">
                     <h3 class="mb-4">Our Journey Since 2016</h3>
-                    <p class="lead">In 2019, we began our noble mission with water camps and food donation drives. What started as a simple initiative has grown into a movement dedicated to serving humanity.</p>
-                    <p>Our motto, <strong>"Manav Mein Hi Madhav Mile"</strong> (Finding the divine in humanity), guides everything we do. We believe that true service to God lies in serving our fellow human beings. When we help someone, comfort the distressed, or bring hope to the hopeless, we experience the presence of the divine in humanity itself.</p>
-                    <p>Under the leadership of Kapil Kumar Agarwal, son of the late Shri M.L. Agarwal, Krishna Gopal Seva Samithi has been consistently working to make this vision a reality. Our journey, which began with modest water distribution camps in 2014, has evolved into a comprehensive service organization touching countless lives.</p>
-                    <p>Today, we continue this sacred mission with the same dedication and passion, believing that every act of kindness brings us closer to understanding the true essence of humanity and divinity.</p>
+                    <p class="lead">In 2014, we began our noble mission with water camps and food donation drives. What started as a simple initiative has grown into a movement dedicated to serving humanity.</p>
+                    <p>Our motto, <strong>"Manav Mein Hi Madhav Mile"</strong> (Finding the divine in humanity), guides everything we do. We believe that true service to God lies in serving our fellow human beings.</p>
+                    <p>Under the leadership of Kapil Kumar Agarwal, son of the late Shri M.L. Agarwal, Krishna Gopal Seva Samithi has been consistently working to make this vision a reality.</p>
+                    <p>Today, we continue this sacred mission with dedication and passion, believing that every act of kindness brings us closer to understanding the true essence of humanity.</p>
                 </div>
             </div>
 
-            <!-- Stats Section -->
             <div class="row">
                 <div class="col-lg-12">
                     <h3 class="text-center mb-4">Our Impact</h3>
@@ -558,13 +427,6 @@
     </section>
 
     
-
-    <!-- Image Modal -->
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
-
     <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
@@ -578,23 +440,22 @@
                         <h4 class="mb-4">Send Us a Message</h4>
                         <form id="contactForm">
                             <div class="mb-3">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" required pattern="[A-Za-z\s]{2,50}" title="Please enter a valid name (2-50 characters)">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" required>
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" required>
                             </div>
                             <div class="mb-3">
-                                <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="5" required minlength="10" maxlength="1000"></textarea>
+                                <label class="form-label">Message</label>
+                                <textarea class="form-control" rows="5" required></textarea>
                             </div>
                             <button type="submit" class="btn-custom">Send Message</button>
-                            <div id="formMessage" class="form-message"></div>
                         </form>
                     </div>
                 </div>
@@ -603,11 +464,11 @@
                         <h4 class="mb-4">Get In Touch</h4>
                         <div class="contact-info-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Hope Street, Mumbai, Maharashtra 400001</span>
+                            <span>Hyderabad, India</span>
                         </div>
                         <div class="contact-info-item">
                             <i class="fas fa-phone"></i>
-                            <span>+91  81068 76999</span>
+                            <span>+91 81068 76999</span>
                         </div>
                         <div class="contact-info-item">
                             <i class="fas fa-clock"></i>
@@ -616,9 +477,9 @@
                         <div class="mt-4">
                             <h5>Follow Us</h5>
                             <div class="social-links">
-                                <a href="https://www.facebook.com/share/17gwAbXC5L/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                                <a href="https://www.instagram.com/krishnagopalsevasamithi?igsh=Z3Y2MnN2czJiank3" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://youtube.com/@krishnagopalsevasamithi?si=WbecJtSLbLvnY-uv" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.facebook.com/share/17gwAbXC5L/"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/krishnagopalsevasamithi?igsh=Z3Y2MnN2czJiank3"><i class="fab fa-instagram"></i></a>
+                                <a href="https://youtube.com/@krishnagopalsevasamithi?si=WbecJtSLbLvnY-uv"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -636,50 +497,20 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Form validation and submission handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const formMessage = document.getElementById('formMessage');
-            
-            // Basic XSS prevention - sanitize inputs
-            const sanitize = (str) => {
-                const div = document.createElement('div');
-                div.textContent = str;
-                return div.innerHTML;
-            };
-            
-            // Validate inputs
-            if (!name || !email || !message) {
-                showMessage('Please fill in all required fields.', 'error');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                showMessage('Please enter a valid email address.', 'error');
-                return;
-            }
-            
-            // Phone validation (if provided)
-            if (phone && !/^[0-9]{10}$/.test(phone)) {
-                showMessage('Please enter a valid 10-digit phone number.', 'error');
-                return;
-            }
-            
-            // Simulate form submission (in production, this would send to a server)
-            showMessage('Thank you for your message! We will get back to you soon.', 'success');
+            alert('Thank you for your message! We will get back to you soon.');
             this.reset();
         });
         
-        function showMessage(msg, type) {
-            const formMessage = document.getElementById('formMessage');
-            formMessage.textContent = msg;
-            formMessage.className = 'form-message ' + type;
-            formMessage.style
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
